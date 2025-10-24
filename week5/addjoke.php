@@ -20,7 +20,8 @@ if (isset($_POST['joketext'])){
         $sql = 'INSERT INTO joke SET
                 joketext = :joketext,
                 jokedate = CURDATE(),
-                image = :image';
+                image = :image,
+                authorid = 1';
         
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':joketext', $_POST['joketext']);
